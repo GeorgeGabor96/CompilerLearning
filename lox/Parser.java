@@ -152,14 +152,14 @@ public class Parser {
             if (previous().type == TokenType.SEMICOLON) return;
 
             switch(peek().type) {
-                case TokenType.CLASS:
-                case TokenType.FUN:
-                case TokenType.VAR:
-                case TokenType.FOR:
-                case TokenType.IF:
-                case TokenType.WHILE:
-                case TokenType.PRINT:
-                case TokenType.RETURN:
+                case CLASS:
+                case FUN:
+                case VAR:
+                case FOR:
+                case IF:
+                case WHILE:
+                case PRINT:
+                case RETURN:
                     return;
             }
 
