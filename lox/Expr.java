@@ -1,6 +1,7 @@
 package lox;
 
 import java.util.List;
+import lox.Token;
 
 abstract class Expr {
     interface Visitor<R> {
