@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-
 public class Lox {
     private static final Interpreter interpreter = new Interpreter();
     static boolean hadError = false;
@@ -30,8 +29,10 @@ public class Lox {
         run(new String(bytes, Charset.defaultCharset()));
 
         // Indicate an error inthe exit code
-        if (hadError) System.exit(65);
-        if (hadRuntimeError) System.exit(70);
+        if (hadError)
+            System.exit(65);
+        if (hadRuntimeError)
+            System.exit(70);
     }
 
     private static void runPrompt() throws IOException {
@@ -41,7 +42,8 @@ public class Lox {
         for (;;) {
             System.out.print("> ");
             String line = reader.readLine();
-            if (line == null) break;
+            if (line == null)
+                break;
             run(line);
             hadError = false;
         }
@@ -55,12 +57,13 @@ public class Lox {
         List<Stmt> statements = parser.parse();
 
         // Stop if there was a syntax error
-        if (hadError) return;
+        if (hadError)
+            return;
 
         interpreter.interpret(statements);
     }
 
-    public static void error(int line , String message) {
+    public static void error(int line, String message) {
         report(line, "", message);
     }
 
@@ -71,7 +74,7 @@ public class Lox {
 
     private static void report(int line, String where, String message) {
         System.err.println(
-            "[line " + line + "] Error " + where + ": " + message);
+                "[line " + line + "] Error " + where + ": " + message);
         hadError = true;
     }
 

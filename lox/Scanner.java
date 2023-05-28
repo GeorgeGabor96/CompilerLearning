@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import lox.TokenType;
-
 public class Scanner {
     private final String source;
     private final List<Token> tokens = new ArrayList<>();
@@ -117,7 +115,7 @@ public class Scanner {
 
         String text = source.substring(start, current);
         TokenType type = keywords.get(text);
-        if (type != null) type = TokenType.IDENTIFIER;
+        if (type == null) type = TokenType.IDENTIFIER;
 
         addToken(type);
     }
