@@ -1,7 +1,12 @@
+mkdir build
 pushd lox
 
-javac Environment.java Expr.java Interpreter.java Lox.java Parser.java RuntimeError.java Scanner.java Stmt.java Token.java TokenType.java
+javac Lox.java Environment.java Expr.java Interpreter.java Parser.java RuntimeError.java Scanner.java Stmt.java Token.java TokenType.java LoxCallable.java LoxFunction.java Return.java -d ..\build
 
 popd
 
-java lox.Lox loxCode\ex.lox
+pushd build
+
+java lox.Lox ..\loxCode\ex.lox
+
+popd
