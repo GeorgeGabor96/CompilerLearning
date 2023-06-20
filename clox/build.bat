@@ -3,7 +3,7 @@
 mkdir build
 pushd src
 
-gcc value.c debug.c chunk.c memory.c main.c -o ..\\build\\clox.exe
+gcc vm.c value.c debug.c chunk.c memory.c main.c -o ..\\build\\clox.exe
 
 popd
 
