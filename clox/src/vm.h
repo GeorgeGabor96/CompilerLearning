@@ -12,6 +12,7 @@ typedef struct {
     uint8_t* ip; // NOTE: points to the next instruction, not the current one
     Value stack[STACK_MAX];
     Value* stackTop; // NOTE: points to the next value to be pushed
+    Table globals;
     Table strings; // NOTE: keep all strings of the program so that we can compare them by pointer
     Obj* objects; // NOTE: List of heap objects for GC
 } VM;

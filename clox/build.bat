@@ -7,8 +7,4 @@ gcc table.c object.c scanner.c compiler.c vm.c value.c debug.c chunk.c memory.c 
 
 popd
 
-pushd build
-
-clox.exe
-
-popd
+build\\clox.exe files\\test.lox
