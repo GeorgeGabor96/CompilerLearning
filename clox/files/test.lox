@@ -1,28 +1,8 @@
-var breakfast = "beignets";
-var beverage = "cafe au lait";
-breakfast = "beignets with " + beverage;
-
-print breakfast;
-
-{
-    var a = 5;
-    print a;
+fun fib(n) {
+  if (n < 2) return n;
+  return fib(n - 2) + fib(n - 1);
 }
 
-var a = 11;
-print a;
-
-if (a > 5) {
-
-    if (a > 20) {
-        print a;
-    }
-
-} else if (a < 15) {
-    print a;
-}
-
-
-for (var x = 0; x < 10; x = x + 1) {
-    print x;
-}
+var start = clock();
+print fib(35);
+print clock() - start;
