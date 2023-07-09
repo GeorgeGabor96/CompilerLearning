@@ -11,3 +11,18 @@ print breakfast;
 
 var a = 11;
 print a;
+
+if (a > 5) {
+
+    if (a > 20) {
+        print a;
+    }
+
+} else if (a < 15) {
+    print a;
+}
+
+
+for (var x = 0; x < 10; x = x + 1) {
+    print x;
+}
