@@ -359,6 +359,7 @@ InterpretResult interpret(const char* source) {
     frame->function = function;
     frame->ip = function->chunk.code;
     frame->slots = vm.stack;
+
     push(OBJ_VAL(function));
     call(function, 0);
 
