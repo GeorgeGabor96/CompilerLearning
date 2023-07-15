@@ -107,6 +107,7 @@ void printObject(Value value) {
     {
         case OBJ_CLOSURE: {
             printFunction(AS_CLOSURE(value)->function);
+            break;
         }
 
         case OBJ_FUNCTION: {

@@ -3,7 +3,7 @@
 mkdir build
 pushd src
 
-gcc table.c object.c scanner.c compiler.c vm.c value.c debug.c chunk.c memory.c main.c -o ..\\build\\clox.exe
+clang table.c object.c scanner.c compiler.c vm.c value.c debug.c chunk.c memory.c main.c -g -o ..\\build\\clox.exe -D_CRT_SECURE_NO_WARNINGS
 
 popd
 
