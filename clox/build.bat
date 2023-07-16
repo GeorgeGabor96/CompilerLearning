@@ -7,4 +7,4 @@ clang table.c object.c scanner.c compiler.c vm.c value.c debug.c chunk.c memory.
 
 popd
 
-build\\clox.exe files\\test.lox
+build\\clox.exe files\\classes.lox
