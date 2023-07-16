@@ -23,7 +23,14 @@ typedef struct {
     Table globals;
     Table strings; // NOTE: keep all strings of the program so that we can compare them by pointer
     ObjUpvalue* openUpvalues;
+
+    size_t bytesAllocated;
+    size_t nextGC;
     Obj* objects; // NOTE: List of heap objects for GC
+
+    int grayCount;
+    int grayCapacity;
+    Obj** grayStack;
 } VM;
 
 typedef enum {
