@@ -22,6 +22,7 @@ typedef struct {
     Value* stackTop; // NOTE: points to the next value to be pushed
     Table globals;
     Table strings; // NOTE: keep all strings of the program so that we can compare them by pointer
+    ObjString* initString;
     ObjUpvalue* openUpvalues;
 
     size_t bytesAllocated;
