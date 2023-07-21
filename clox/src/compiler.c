@@ -705,18 +705,18 @@ static void classDeclaration() {
         consume(TOKEN_IDENTIFIER, "Expect superclass name.");
         variable(false);
 
-        if (!identifiersEqual(&className, &parser.previous)) {
+        if (identifiersEqual(&className, &parser.previous)) {
             error("A class can't inherit from itself.");
         }
+
+        beginScope();
+        addLocal(syntheticToken("super"));
+        defineVariable(0);
 
         namedVariable(className, false);
         emitByte(OP_INHERIT);
         classCompiler.hasSuperclass = true;
     }
-
-    beginScope();
-    addLocal(syntheticToken("super"));
-    defineVariable(0);
 
     namedVariable(className, false);
     consume(TOKEN_LEFT_BRACE, "Expect '{' before class body.");
